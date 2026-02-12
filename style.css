@@ -445,4 +445,74 @@ nav ul li a:hover {
     }
 }
 
+/* ==========================================
+   ESTILO DO MODAL (REVISADO)
+   ========================================== */
+
+.modal {
+    display: none; /* Começa escondido */
+    position: fixed;
+    z-index: 9999; /* Valor alto para ficar na frente de TUDO */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro */
+    
+    /* Centralização total */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quando o JS mudar o display para 'flex', o CSS abaixo entra em ação */
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%; /* Importante para celular */
+    max-width: 380px; /* Não fica gigante no PC */
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease; /* Efeitinho de abrir */
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+    line-height: 1;
+}
+
+.botoes-atendentes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-atendente {
+    background-color: #5e4f36;
+    color: white !important;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: block; /* Garante que o link se comporte como botão */
+}
+
+.btn-atendente:hover {
+    background-color: #978260;
+    transform: translateY(-2px);
+}
 
