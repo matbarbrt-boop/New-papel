@@ -261,7 +261,7 @@ nav ul li a:hover {
     }
 
     .hero-content {
-        width: 50%;
+        width: 100%;
     }
 
     .hero-content h1 {
@@ -418,3 +418,4 @@ nav ul li a:hover {
         padding: 20px; /* Botão ainda maior no celular para facilitar o clique */
     }
 }
+
