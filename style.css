@@ -113,7 +113,14 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 30px;
-    text-align: left;
+    
+    /* Alinhamento do Bloco */
+    max-width: 500px; /* Define um tamanho máximo para não esticar demais no PC */
+    margin-left: 0;   /* No PC, ele começa na esquerda */
+    margin-right: auto;
+
+    /* Texto interno */
+    text-align: left; 
     border-left: 5px solid #5e4f36;
 }
 
