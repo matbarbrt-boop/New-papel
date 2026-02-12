@@ -220,74 +220,105 @@ nav ul li a:hover {
     background-color: #978260;
 }
 
-/* --- AJUSTE PARA CELULARES PEQUENOS --- */
-@media (max-width: 480px) {
-    .grid-produtos {
-        grid-template-columns: 1fr; /* Força uma coluna única */
-        gap: 20px;
-    }
-    
-    .card-produto img {
-        height: 200px; /* Reduz um pouco a altura da foto no celular para economizar espaço */
+/* ==========================================
+   AJUSTE DA PÁGINA INICIAL PARA CELULAR
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste do Header/Menu */
+    header {
+        padding: 15px 5%;
     }
 
-    .catalogo-container h2 {
-        font-size: 1.8rem;
+    nav {
+        flex-direction: column; /* Logo em cima, menu embaixo */
+        gap: 15px;
     }
+
+    nav ul {
+        padding: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Espaçamento igual entre os links */
+    }
+
+    /* 2. Ajuste do Hero (Seção Principal) */
+    .hero {
+        flex-direction: column-reverse; /* IMAGEM EM CIMA, TEXTO EMBAIXO */
+        padding: 20px 5% 50px 5%; /* Menos espaço nas laterais */
+        text-align: center; /* Centraliza tudo no celular */
+        min-height: auto;
+    }
+
+    .hero-content {
+        width: 50%;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Diminui o título para não quebrar feio */
+        margin-top: 20px;
+        line-height: 1.1;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* 3. Ajuste da Imagem */
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        max-width: 80%; /* Não deixa a imagem ocupar a tela toda dos lados */
+        height: auto;
+        box-shadow: 10px 10px 0px #5e4f36; /* Sombra menor para telas menores */
+    }
+
+   .como-funciona li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start; /* Alinha a bolinha com a primeira linha do texto */
+    color: #444;
+    line-height: 1.4; /* Melhora o espaçamento entre linhas do texto */
 }
-/* Estilo da Janela Modal */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7); /* Fundo escuro atrás */
+
+.como-funciona li span {
+    background: #5e4f36;
+    color: white;
+    
+    /* Garante que a bolinha seja um círculo perfeito */
+    width: 24px; 
+    height: 24px;
+    min-width: 24px; /* Impede que a bolinha amasse no celular */
+    min-height: 24px;
+    
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #555;
-}
-
-.botoes-atendentes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn-atendente {
-    background-color: #5e4f36;
-    color: white;
-    padding: 12px;
-    text-decoration: none;
-    border-radius: 8px;
+    
+    margin-right: 12px;
+    margin-top: 2px; /* Ajuste fino para alinhar o número com a primeira letra */
+    
+    font-size: 0.8rem;
     font-weight: bold;
-    transition: 0.3s;
+    flex-shrink: 0; /* Proíbe o navegador de tentar espremer a bolinha */
 }
-
-.btn-atendente:hover {
-    background-color: #978260;
-    transform: scale(1.03);
+    /* 5. Botão Grande para o Polegar */
+    .btn-principal {
+        width: 100%; /* Botão ocupa a largura toda no celular (mais fácil de clicar) */
+        display: block;
+        padding: 18px;
+    }
 }
 /* --- ESTILO DA PÁGINA DE CONTATO --- */
 
