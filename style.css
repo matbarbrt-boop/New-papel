@@ -108,11 +108,37 @@ nav ul li a:hover {
 }
 
 /* Estilo do bloco Como Funciona */
-.como-funciona {
-    background: #f4f1ed;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 30px;
+.como-funciona li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start; /* Alinha a bolinha com a primeira linha do texto */
+    color: #444;
+    line-height: 1.4; /* Melhora o espaçamento entre linhas do texto */
+}
+
+.como-funciona li span {
+    background: #5e4f36;
+    color: white;
+    
+    /* Garante que a bolinha seja um círculo perfeito */
+    width: 24px; 
+    height: 24px;
+    min-width: 24px; /* Impede que a bolinha amasse no celular */
+    min-height: 24px;
+    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-right: 12px;
+    margin-top: 2px; /* Ajuste fino para alinhar o número com a primeira letra */
+    
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0; /* Proíbe o navegador de tentar espremer a bolinha */
+}
     
     /* Alinhamento do Bloco */
     max-width: 500px; /* Define um tamanho máximo para não esticar demais no PC */
@@ -418,4 +444,5 @@ nav ul li a:hover {
         padding: 20px; /* Botão ainda maior no celular para facilitar o clique */
     }
 }
+
 
