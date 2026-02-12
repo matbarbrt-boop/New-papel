@@ -199,9 +199,9 @@ nav ul li a:hover {
 
 .grid-produtos {
     display: grid;
-    /* No PC: 3 ou 4 colunas. No Celular: 1 coluna automática */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
+    /* Isso permite que ele tente encaixar o máximo de colunas possível */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 15px; /* Espaço menor entre os produtos */
     margin-top: 30px;
 }
 
@@ -257,11 +257,31 @@ nav ul li a:hover {
    AJUSTE DA PÁGINA INICIAL PARA CELULAR
    ========================================== */
 
-@media (max-width: 768px) {
-    /* 1. Ajuste do Header/Menu */
-    header {
-        padding: 15px 5%;
+@media (max-width: 600px) {
+    .grid-produtos {
+        /* Força exatamente duas colunas no celular */
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px; /* Espaço pequeno para caber tudo */
+        padding: 0 5px;
     }
+
+    .card-produto {
+        padding: 10px; /* Diminui o respiro interno do card */
+    }
+
+    .card-produto img {
+        height: 150px; /* Diminui a altura da imagem para não ocupar a tela toda */
+    }
+
+    .card-produto h3 {
+        font-size: 0.9rem; /* Diminui o título para não quebrar muitas linhas */
+    }
+
+    .btn-comprar {
+        padding: 10px 5px;
+        font-size: 0.8rem; /* Botão um pouco menor para caber no card */
+    }
+}
 
     nav {
         flex-direction: column; /* Logo em cima, menu embaixo */
@@ -516,5 +536,6 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 }
+
 
 
